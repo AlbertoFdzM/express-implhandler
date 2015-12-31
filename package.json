@@ -11,5 +11,8 @@
     "url": "https://github.com/AlbertoFdzM/express-implhandler.git"
   },
   "author": "Alberto Fernandez <albertofdzm@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
 }
