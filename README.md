@@ -8,6 +8,8 @@ This script is useful if you'r developing an API with express or you'd like to s
 
 Put this inside your API router script just after the 404 error catcher.
 
+Root API endpoint (`/api/v1`) router example:
+
 ```javascript
 var express = require('express');
 var router = express.Router();
@@ -34,7 +36,7 @@ implHandler(router);
 module.exports = router;
 ```
 
-Then if you try to call to your API  endpoints with some method not defined you will receive a 501 response code with the next content:
+Then if you try to call to your API  endpoints with some method not defined you will receive a 501 response code. For example if you try to make a `PUT` request to `/api/v1/` the server will return a 501 code with the next content:
 
 ```json
 {
