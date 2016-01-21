@@ -47,7 +47,16 @@ var getEndpoints = function (routerStack, path, endpoints) {
  * Puts middleware to set 501 error for not used methods
  */
 var implHandler = function (router) {
-  var endpoints = getEndpoints(router.stack);
+  var endpoints = [];
+
+  router = router || {};
+
+  if (router.tack) {
+    endpoints = getEndpoints(router.stack);
+  } else if (router._router) {
+    endpoints = getEndpoints(router._router.stack);
+  }
+
 
   endpoints.map(function (val) {
     router.all(val, function (req, res, next) {
