@@ -6,7 +6,6 @@ var implHandler = require('../index');
 var expect = chai.expect;
 var should = chai.should();
 
-
 var app = express();
 var router = express.Router();
 
