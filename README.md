@@ -49,7 +49,7 @@ Then if you try to call to your API  endpoints with some method not defined you 
 
 ## Arguments
 
-The only argument that you will need to pass to the script is your router instance (`router`) or your app router instance (`app._router`).
+The only argument that you will need to pass to the script is your router instance (`router`) or your app instance (`app`).
 
 _**Note:** Pay attention that before call this script the router must have the endpoints registered due to handle them._
 
