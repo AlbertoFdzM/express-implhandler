@@ -9,6 +9,12 @@ var should = chai.should();
 var app = express();
 var router = express.Router();
 
+var errorHandler = function(err, req, res, next) {
+  if (err) {return res.status(err.status || 500).json(err);}
+
+  return next();
+};
+
 router.route('/')
   .get(function(req, res) {
     return res.end();
@@ -37,18 +43,10 @@ app.route('/app-test')
 
 app.use('/router', router);
 
-implHandler(app);
-
-app.use(function(err, req, res, next) {
-  if (err) {
-    res.status(err.status || 500).send(err);
-  }
-
-  next();
-});
-
 describe('express-implhandler', function() {
   describe('when called over an app', function() {
+    implHandler(app);
+    app.use(errorHandler);
     var agent = chai.request.agent(app);
 
     describe('for the app', function() {
@@ -99,7 +97,7 @@ describe('express-implhandler', function() {
       });
     });
 
-    describe('for the attached router methods', function() {
+    describe('for the attached routers methods', function() {
       it('should not change the response on current methods', function(done) {
         agent.get('/router/')
           .end(function(err, res) {
