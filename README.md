@@ -2,16 +2,17 @@
 
 Simple express method implementation script to catch error code 501
 
-This script is useful if you'r developing an API with express or you'd like to set a default 501 response for your actual server endpoints.
+This script is useful if you'r developing an API with express or you'd like to set a default 501 error for your actual server endpoints unused verbs.
 
 ```javascript
 var implHandler = require('express-implhandler');
+
 implHandler(app);
 ```
 
 ## Example of use
 
-Put this inside your API router script just after the 404 error catcher.
+Put this inside your API router script just before the 404 error catcher.
 
 Root API endpoint (`/api/v1`) router example:
 
@@ -43,6 +44,8 @@ implHandler(router, function (req, res, next) {
 
 // catch 404 and forward to error handler
 // ...
+
+// JSON error middleware
 
 module.exports = router;
 ```
