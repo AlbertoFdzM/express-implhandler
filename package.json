@@ -13,12 +13,12 @@
   "author": "Alberto Fernandez <albertofdzm@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.13.3",
-    "express-list-endpoints": "^1.0.1"
+    "express": "^4.13.4",
+    "express-list-endpoints": "^1.1.0"
   },
   "devDependencies": {
-    "chai": "^3.4.1",
+    "chai": "^3.5.0",
     "eslint": "^1.10.3",
-    "mocha": "^2.3.4"
+    "mocha": "^2.4.5"
   }
 }
