@@ -1,4 +1,4 @@
-/*eslint-env mocha */
+/* eslint-env node, mocha */
 var chai = require('chai');
 chai.use(require('chai-http'));
 var express = require('express');
