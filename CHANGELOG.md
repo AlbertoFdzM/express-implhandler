@@ -4,6 +4,7 @@
   * Improved package tests
   * Updated dependencies
   * Added a callback argument to modify the handler.
+  * Added npm versioning scripts.
 
 # 1.1.0 / 2016-04-20
 

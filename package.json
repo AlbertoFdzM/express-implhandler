@@ -4,7 +4,9 @@
   "description": "Simple express method implementation script to catch error code 501",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "preversion": "npm test",
+    "postversion": "git push --follow-tags"
   },
   "repository": {
     "type": "git",
