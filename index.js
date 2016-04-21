@@ -1,16 +1,20 @@
 var listEndpoints = require('express-list-endpoints');
 
 /**
- * Puts middleware to set 501 error for not used methods
+ * Default callback
+ */
+var defaultCb = function(req, res, next) {
+  var err = new Error('Not implemented');
+
+  err.status = 501;
+  return next(err);
+};
+
+/**
+ * Puts middleware to set 501 error for unused methods
  */
 var implHandler = function(router, callback) {
   var endpoints = [];
-  var defaultCb = function(req, res, next) {
-    var err = new Error('Not implemented');
-
-    err.status = 501;
-    return next(err);
-  };
 
   router = router || {};
   callback = callback || defaultCb;
