@@ -13,20 +13,12 @@ var defaultCb = function(req, res, next) {
 /**
  * Puts middleware to set 501 error for unused methods
  */
-var implHandler = function(router, callback) {
-  var endpoints = [];
-
-  router = router || {};
+var implHandler = function(app, callback) {
+  var endpoints = listEndpoints(app);
   callback = callback || defaultCb;
 
-  if (router.stack) {
-    endpoints = listEndpoints(router.stack);
-  } else if (router._router) {
-    endpoints = listEndpoints(router._router.stack);
-  }
-
   endpoints.map(function(endpoint) {
-    router.all(endpoint.path, callback);
+    app.all(endpoint.path, callback);
   });
 };
 

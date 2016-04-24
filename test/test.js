@@ -71,7 +71,7 @@ describe('express-implhandler', function() {
           Q.all([
             agent.get('/'),
             agent.put('/app-test')
-          ]).then(function (values) {
+          ]).then(function(values) {
             checkResponses(200, values, done);
           });
         });
