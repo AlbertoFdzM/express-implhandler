@@ -1,5 +1,10 @@
 # Express implHandler
 
+[![Build Status](https://travis-ci.org/AlbertoFdzM/express-implhandler.svg?branch=master)](https://travis-ci.org/AlbertoFdzM/express-implhandler) [![codecov.io](https://codecov.io/github/AlbertoFdzM/express-implhandler/coverage.svg?branch=master)](https://codecov.io/github/AlbertoFdzM/express-implhandler?branch=master) [![bitHound Overall Score](https://www.bithound.io/github/AlbertoFdzM/express-implhandler/badges/score.svg)](https://www.bithound.io/github/AlbertoFdzM/express-implhandler)
+[![Dependency Status](https://gemnasium.com/badges/github.com/AlbertoFdzM/express-implhandler.svg)](https://gemnasium.com/github.com/AlbertoFdzM/express-implhandler)
+
+[![NPM](https://nodei.co/npm/express-implhandler.png)](https://nodei.co/npm/express-implhandler/)
+
 Simple express method implementation script to catch error code 501
 
 This script is useful if you'r developing an API with express or you'd like to set a default 501 error for your actual server endpoints unused verbs.
