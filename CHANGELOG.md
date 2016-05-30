@@ -3,6 +3,7 @@
   * Implemented [Travis CI](https://travis-ci.org/) to the project. #5
   * Implemented [CodeCov](http://http://codecov.io/) to the project. #6
   * Fancy badges on the README file! #8
+  * Implement script to add version to changelog. #9
 
 # v1.1.1 / 2016-04-21
 
