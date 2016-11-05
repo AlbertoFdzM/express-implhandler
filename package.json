@@ -17,6 +17,7 @@
   "author": "Alberto Fernandez <albertofdzm@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.14.0",
     "express-list-endpoints": "^2.0.0"
   },
   "devDependencies": {
