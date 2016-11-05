@@ -8,7 +8,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [UNRELEASED]
 
 ### Added
-
   * Implemented [Travis CI](https://travis-ci.org/) to the project. #5
   * Implemented [CodeCov](http://http://codecov.io/) to the project. #6
 
