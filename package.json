@@ -1,6 +1,6 @@
 {
   "name": "express-implhandler",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Simple express method implementation script to catch error code 501",
   "main": "index.js",
   "scripts": {
