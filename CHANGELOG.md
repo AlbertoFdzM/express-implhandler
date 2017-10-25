@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## v1.1.4 - 2017-10-25
+
+### Changed
+  * Remove innecessary dependencies
+  * Update dependencies
+  * Change codestyle to standardJS
+
+
 ## v1.1.3 - 2016-11-06
 
 ### Added
@@ -20,6 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
   * Implement script to add version to changelog. #9
 
+
 ## v1.1.1 - 2016-04-21
 
   * Improved code. #3
@@ -27,6 +36,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
   * Updated dependencies
   * Added a callback argument to modify the handler.
   * Added npm versioning scripts.
+
 
 ## v1.1.0 - 2016-04-20
 
