@@ -4,7 +4,6 @@ chai.use(require('chai-http'))
 const express = require('express')
 const implHandler = require('../index')
 const expect = chai.expect
-const Q = global.Promise
 
 const app = express()
 const router = express.Router()
@@ -67,7 +66,7 @@ describe('express-implhandler', function () {
     describe('for the app', function () {
       describe('on defined endpoints', function () {
         it('should not change response on defined methods', function (done) {
-          Q.all([
+          Promise.all([
             agent.get('/'),
             agent.put('/app-test')
           ])
@@ -100,7 +99,7 @@ describe('express-implhandler', function () {
 
     describe('for the attached routers methods', function () {
       it('should not change the response on current methods', function (done) {
-        Q.all([
+        Promise.all([
           agent.get('/router/'),
           agent.post('/router/router-test'),
           agent.copy('/router/router-test'),
