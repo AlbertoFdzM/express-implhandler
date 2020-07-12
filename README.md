@@ -1,45 +1,46 @@
 # Express implHandler
 
-[![Build Status](https://travis-ci.org/AlbertoFdzM/express-implhandler.svg?branch=master)](https://travis-ci.org/AlbertoFdzM/express-implhandler) [![codecov.io](https://codecov.io/github/AlbertoFdzM/express-implhandler/coverage.svg?branch=master)](https://codecov.io/github/AlbertoFdzM/express-implhandler?branch=master) [![Known Vulnerabilities](https://snyk.io/test/github/AlbertoFdzM/express-implhandler/badge.svg?targetFile=package.json)](https://snyk.io/test/github/AlbertoFdzM/express-implhandler?targetFile=package.json)
+[![Build Status](https://travis-ci.org/AlbertoFdzM/express-implhandler.svg?branch=master)](https://travis-ci.org/AlbertoFdzM/express-implhandler) [![codecov](https://codecov.io/gh/AlbertoFdzM/express-implhandler/branch/develop/graph/badge.svg)](https://codecov.io/gh/AlbertoFdzM/express-implhandler) [![Known Vulnerabilities](https://snyk.io/test/github/AlbertoFdzM/express-implhandler/badge.svg?targetFile=package.json)](https://snyk.io/test/github/AlbertoFdzM/express-implhandler?targetFile=package.json)
 
 [![NPM](https://nodei.co/npm/express-implhandler.png)](https://nodei.co/npm/express-implhandler/)
 
 Simple express method implementation script to catch error code 501
 
-This script is useful if you'r developing an API with express or you'd like to set a default 501 error for your actual server endpoints unused verbs.
+This script is useful if you're developing an API with [Express](https://expressjs.com/) or you'd like to set a default 501 error for your actual server endpoints unused verbs.
 
 ```javascript
-var implHandler = require('express-implhandler');
+const implHandler = require('express-implhandler');
 
 implHandler(app);
 ```
 
 ## Example of use
 
-Put this inside your API router script just before the 404 error catcher.
+Put this inside your API router just before the 404 error catcher.
 
 Root API endpoint (`/api/v1`) router example:
 
 ```javascript
-var express = require('express');
-var router = express.Router();
-var implHandler = require('express-implhandler');
-var users = require('./users');
-var cars = require('./cars');
+const express = require('express');
+const router = express.Router();
+const implHandler = require('express-implhandler');
+
+const users = require('./users');
+const cars = require('./cars');
 
 // define your routes
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
   res.json({
     message: 'Welcome to this awesome API!'
   });
 });
 
-router.use('/users', users)
-router.use('/cars', cars)
+router.use('/users', users);
+router.use('/cars', cars);
 
 // catch 501 and forward to error handler
-implHandler(router, function (req, res, next) {
-  var err = new Error('Not implemented');
+implHandler(router, (req, res, next) => {
+  const err = new Error('Not implemented');
 
   err.status = 501;
 
@@ -54,7 +55,7 @@ implHandler(router, function (req, res, next) {
 module.exports = router;
 ```
 
-Then if you try to call to your API  endpoints with some method not defined you will receive a 501 response code. For example if you try to make a `PUT` request to `/api/v1/` the server will return a 501 code with the next content:
+Then if you try to call to your API  endpoints with some method not defined you will receive a 501 response code. For example if you try to make a request `PUT /api/v1/` the server will return a [`501` HTTP code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/501) with the next content:
 
 ```json
 {
@@ -71,25 +72,26 @@ Then if you try to call to your API  endpoints with some method not defined you 
 
 Your router instance (`router`) or your app instance (`app`).
 
-_**Note:** Pay attention that before call this script the router must have the endpoints registered due to handle them._
+_**Note:** Pay attention that before call this script the router must have the endpoints registered in order to handle them._
 
 ### `callback` (optional)
 
 **Default:***
 ```javascript
-implHandler(app, function(req, res, next) {
-  var err = new Error('Not implemented');
+implHandler(app, (req, res, next) => {
+  const err = new Error('Not implemented');
 
   err.status = 501;
+
   return next(err);
 });
 ```
 
 You can override the default callback with one of your preference:
 ```javascript
-implHandler(app, function(req, res, next) {
-  var err = new Error(
-    'Method not yet implemented. Please refer to our API docs for more info'
+implHandler(app, (req, res, next) => {
+  const err = new Error(
+    'Method not yet implemented. Please refer to API docs for more info'
   );
 
   err.status = 501;
