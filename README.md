@@ -1,6 +1,6 @@
 # Express implHandler
 
-[![Build Status](https://travis-ci.org/AlbertoFdzM/express-implhandler.svg?branch=master)](https://travis-ci.org/AlbertoFdzM/express-implhandler) [![codecov.io](https://codecov.io/github/AlbertoFdzM/express-implhandler/coverage.svg?branch=master)](https://codecov.io/github/AlbertoFdzM/express-implhandler?branch=master)
+[![Build Status](https://travis-ci.org/AlbertoFdzM/express-implhandler.svg?branch=master)](https://travis-ci.org/AlbertoFdzM/express-implhandler) [![codecov.io](https://codecov.io/github/AlbertoFdzM/express-implhandler/coverage.svg?branch=master)](https://codecov.io/github/AlbertoFdzM/express-implhandler?branch=master) [![Known Vulnerabilities](https://snyk.io/test/github/AlbertoFdzM/express-implhandler/badge.svg?targetFile=package.json)](https://snyk.io/test/github/AlbertoFdzM/express-implhandler?targetFile=package.json)
 
 [![NPM](https://nodei.co/npm/express-implhandler.png)](https://nodei.co/npm/express-implhandler/)
 
