@@ -3,7 +3,7 @@ const listEndpoints = require('express-list-endpoints')
 /**
  * Default callback
  */
-const defaultCb = function (req, res, next) {
+const defaultCb = (req, res, next) => {
   const err = new Error('Not implemented')
 
   err.status = 501
@@ -14,11 +14,11 @@ const defaultCb = function (req, res, next) {
 /**
  * Puts middleware to set 501 error for unused methods
  */
-const implHandler = function (app, callback) {
+const implHandler = (app, callback) => {
   const endpoints = listEndpoints(app)
   callback = callback || defaultCb
 
-  endpoints.map(function (endpoint) {
+  endpoints.map((endpoint) => {
     app.all(endpoint.path, callback)
   })
 }
