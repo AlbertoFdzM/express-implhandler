@@ -9,9 +9,9 @@ Simple express method implementation script to catch error code 501
 This script is useful if you're developing an API with [Express](https://expressjs.com/) or you'd like to set a default 501 error for your actual server endpoints unused verbs.
 
 ```javascript
-const implHandler = require('express-implhandler');
+const implHandler = require('express-implhandler')
 
-implHandler(app);
+implHandler(app)
 ```
 
 ## Example of use
@@ -21,38 +21,38 @@ Put this inside your API router just before the 404 error catcher.
 Root API endpoint (`/api/v1`) router example:
 
 ```javascript
-const express = require('express');
-const router = express.Router();
-const implHandler = require('express-implhandler');
+const express = require('express')
+const router = express.Router()
+const implHandler = require('express-implhandler')
 
-const users = require('./users');
-const cars = require('./cars');
+const users = require('./users')
+const cars = require('./cars')
 
 // define your routes
 router.get('/', (req, res) => {
   res.json({
     message: 'Welcome to this awesome API!'
-  });
-});
+  })
+})
 
-router.use('/users', users);
-router.use('/cars', cars);
+router.use('/users', users)
+router.use('/cars', cars)
 
 // catch 501 and forward to error handler
 implHandler(router, (req, res, next) => {
-  const err = new Error('Not implemented');
+  const err = new Error('Not implemented')
 
-  err.status = 501;
+  err.status = 501
 
-  return next(err);
-});
+  return next(err)
+})
 
 // catch 404 and forward to error handler
 // ...
 
 // JSON error middleware
 
-module.exports = router;
+module.exports = router
 ```
 
 Then if you try to call to your API  endpoints with some method not defined you will receive a 501 response code. For example if you try to make a request `PUT /api/v1/` the server will return a [`501` HTTP code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/501) with the next content:
@@ -74,30 +74,30 @@ Your router instance (`router`) or your app instance (`app`).
 
 _**Note:** Pay attention that before call this script the router must have the endpoints registered in order to handle them._
 
-### `callback` (optional)
+### `middleware` (optional)
 
 **Default:***
 ```javascript
 implHandler(app, (req, res, next) => {
-  const err = new Error('Not implemented');
+  const err = new Error('Not implemented')
 
-  err.status = 501;
+  err.status = 501
 
-  return next(err);
-});
+  return next(err)
+})
 ```
 
-You can override the default callback with one of your preference:
+You can override the default middleware with one of your preference:
 ```javascript
 implHandler(app, (req, res, next) => {
   const err = new Error(
     'Method not yet implemented. Please refer to API docs for more info'
-  );
+  )
 
-  err.status = 501;
+  err.status = 501
 
-  return next(err);
-});
+  return next(err)
+})
 ```
 
 ## Collaborate
