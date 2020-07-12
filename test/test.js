@@ -1,15 +1,15 @@
 /* eslint-env node, mocha */
-var chai = require('chai')
+const chai = require('chai')
 chai.use(require('chai-http'))
-var express = require('express')
-var implHandler = require('../index')
-var expect = chai.expect
-var Q = global.Promise
+const express = require('express')
+const implHandler = require('../index')
+const expect = chai.expect
+const Q = global.Promise
 
-var app = express()
-var router = express.Router()
+const app = express()
+const router = express.Router()
 
-var multiCatch = function (promises, errHandler, cb, index) {
+const multiCatch = function (promises, errHandler, cb, index) {
   index = index || 0
   promises[index].catch(function (err) {
     errHandler(err)
@@ -22,7 +22,7 @@ var multiCatch = function (promises, errHandler, cb, index) {
   })
 }
 
-var checkResponses = function (code, values, cb) {
+const checkResponses = function (code, values, cb) {
   values.forEach(function (res) {
     expect(res).to.has.status(code)
   })
@@ -30,11 +30,11 @@ var checkResponses = function (code, values, cb) {
   cb()
 }
 
-var end = function (req, res) {
+const end = function (req, res) {
   return res.end()
 }
 
-var errorHandler = function (err, req, res, next) {
+const errorHandler = function (err, req, res, next) {
   if (err) {
     return res.status(err.status || 500).json(err)
   }
@@ -60,11 +60,9 @@ app.use('/router', router)
 
 describe('express-implhandler', function () {
   describe('when called over an app', function () {
-    var agent
-
     implHandler(app)
     app.use(errorHandler)
-    agent = chai.request.agent(app)
+    const agent = chai.request.agent(app)
 
     describe('for the app', function () {
       describe('on defined endpoints', function () {
