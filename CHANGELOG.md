@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Security
 -->
 
-## [UNRELEASED]
+## v3.0.0 - 2020-07-12
 ### Changed
 - Updated dev dependencies
 - Implemented support in tests for node 10, 12 and 14
