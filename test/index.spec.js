@@ -3,7 +3,7 @@ const mocha = require('mocha')
 const chai = require('chai')
 chai.use(require('chai-http'))
 const express = require('express')
-const implHandler = require('../index')
+const implHandler = require('../src/index')
 
 const describe = mocha.describe
 const it = mocha.it
