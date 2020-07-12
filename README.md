@@ -1,7 +1,6 @@
 # Express implHandler
 
-[![Build Status](https://travis-ci.org/AlbertoFdzM/express-implhandler.svg?branch=master)](https://travis-ci.org/AlbertoFdzM/express-implhandler) [![codecov.io](https://codecov.io/github/AlbertoFdzM/express-implhandler/coverage.svg?branch=master)](https://codecov.io/github/AlbertoFdzM/express-implhandler?branch=master) [![bitHound Overall Score](https://www.bithound.io/github/AlbertoFdzM/express-implhandler/badges/score.svg)](https://www.bithound.io/github/AlbertoFdzM/express-implhandler)
-[![Dependency Status](https://gemnasium.com/badges/github.com/AlbertoFdzM/express-implhandler.svg)](https://gemnasium.com/github.com/AlbertoFdzM/express-implhandler)
+[![Build Status](https://travis-ci.org/AlbertoFdzM/express-implhandler.svg?branch=master)](https://travis-ci.org/AlbertoFdzM/express-implhandler) [![codecov.io](https://codecov.io/github/AlbertoFdzM/express-implhandler/coverage.svg?branch=master)](https://codecov.io/github/AlbertoFdzM/express-implhandler?branch=master)
 
 [![NPM](https://nodei.co/npm/express-implhandler.png)](https://nodei.co/npm/express-implhandler/)
 
