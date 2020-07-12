@@ -1,15 +1,14 @@
 {
   "name": "express-implhandler",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Simple express method implementation script to catch error code 501",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "lint": "eslint --ignore-path .gitignore .",
     "test": "mocha --exit",
     "preversion": "npm test",
-    "version": "npm run build && git add CHANGELOG.md",
-    "postversion": "git push --follow-tags",
-    "build": "node ./scripts/build.js"
+    "version": "changelog-version && git add CHANGELOG.md",
+    "postversion": "git push --follow-tags"
   },
   "repository": {
     "type": "git",
@@ -18,18 +17,19 @@
   "author": "Alberto Fernandez <albertofdzm@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "express-list-endpoints": "^3.0.0"
+    "express-list-endpoints": "^4.0.1"
   },
   "devDependencies": {
-    "chai": "^4.0.1",
-    "chai-http": "^3.0.0",
-    "eslint": "^4.1.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-standard": "^3.0.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "changelog-version": "^1.0.1",
+    "eslint": "^7.4.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "express": "^4.13.4",
-    "mocha": "^4.0.1"
+    "mocha": "^8.0.1"
   }
 }
