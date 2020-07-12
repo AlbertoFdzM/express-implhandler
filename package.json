@@ -21,8 +21,8 @@
     "express-list-endpoints": "^4.0.1"
   },
   "devDependencies": {
-    "chai": "^4.0.1",
-    "chai-http": "^3.0.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "eslint": "^7.4.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.22.0",
